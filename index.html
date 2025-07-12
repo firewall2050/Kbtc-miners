@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>KBTC Miner</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0e0e0e;
+      color: #00ff99;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #1a1a1a;
+      padding: 30px;
+      border-radius: 10px;
+    }
+    button {
+      background: #00ff99;
+      color: black;
+      border: none;
+      padding: 15px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .hashrate {
+      font-size: 24px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>💻 KBTC Miner</h1>
+    <p>Click below to start mining fake KBTC coins (for demo only)</p>
+    <button onclick="startMining()">Start Mining</button>
+    <div class="hashrate" id="output">Hashrate: 0 H/s</div>
+  </div>
+
+  <script>
+    let hashrate = 0;
+    function startMining() {
+      document.getElementById("output").innerText = "Hashrate: " + hashrate + " H/s";
+      setInterval(() => {
+        hashrate += Math.floor(Math.random() * 1000);
+        document.getElementById("output").innerText = "Hashrate: " + hashrate + " H/s";
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
